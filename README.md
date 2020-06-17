@@ -16,6 +16,11 @@ Start the dev server for local development:
 docker-compose up
 ```
 
+Run a bash shell in the container:
+```
+docker-compose run --rm web bash
+```
+
 Run a command inside the docker container:
 
 ```bash
