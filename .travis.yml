@@ -7,9 +7,9 @@ python:
 before_script:
   - docker-compose build
 script:
-  - docker-compose run --rm web "flake8 . &&
-                                python wait_for_postgres.py &&
-                                python manage.py test"
+  - docker-compose run --rm web "python flake8 . &&
+                                 python wait_for_postgres.py &&
+                                 python manage.py test"
 
 notifications:
   email: false
