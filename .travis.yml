@@ -17,4 +17,4 @@ notifications:
   email: false
 
 cache:
-  pip: true
+  pip: false
