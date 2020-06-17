@@ -1,4 +1,4 @@
 [flake8]
 ignore = W391
-exclude = .git,*migrations*,*/venv
+exclude = .git,*migrations*
 max-line-length = 119

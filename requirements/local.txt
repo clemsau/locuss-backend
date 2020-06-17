@@ -1,4 +1,4 @@
--r base.txt  # includes base requirements
+-r common.txt  # includes base requirements
 
 # Developer Tools
 ipdb==0.13.2
