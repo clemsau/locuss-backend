@@ -1,0 +1,7 @@
+-r base.txt  # includes base requirements
+
+# Developer Tools
+ipdb==0.13.2
+ipython==7.15.0
+mkdocs==1.1.2
+flake8==3.8.3
