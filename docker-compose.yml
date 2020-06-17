@@ -10,8 +10,7 @@ services:
     image: web
     build: ./
     command: >
-      bash -c "python wait_for_postgres.py &&
-               python manage.py migrate &&
+      bash -c "python manage.py migrate &&
                python manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./:/code
