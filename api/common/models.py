@@ -1,6 +1,6 @@
 from django.db import models
 
-from backend.common.mixins.models import TimestampMixin
+from api.common.mixins.models import TimestampMixin
 
 
 class BaseModel(TimestampMixin, models.Model):
