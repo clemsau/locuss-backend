@@ -1,17 +1,16 @@
 from django.test import TestCase
-from fixtureless.factory import create
 
-from api.cards.models import Card
+from api.cards.tests.factories import CardFactory
 
 
 class TestCardModel(TestCase):
     def setUp(self):
-        self.card = create(Card)
+        self.card = CardFactory()
 
     def test_card_str(self):
         """
         Validate the str return of the Card
         """
-        expected = Card.__str__(self.card)
+        expected = '{} - {}'.format(self.card.front_text, self.card.back_text)
         actual = self.card.__str__()
         self.assertEqual(expected, actual)
