@@ -24,6 +24,7 @@ class Common(Configuration):
 
         # Your apps
         'api.users',
+        'api.decks',
         'api.cards',
 
     )
