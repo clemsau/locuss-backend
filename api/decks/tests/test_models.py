@@ -1,16 +1,16 @@
 from django.test import TestCase
 
-from api.cards.tests.factories import CardFactory
+from api.decks.tests.factories import DeckFactory
 
 
-class TestCardModel(TestCase):
+class TestDeckModel(TestCase):
     def setUp(self):
-        self.card = CardFactory()
+        self.deck = DeckFactory()
 
-    def test_card_str(self):
+    def test_deck_str(self):
         """
-        Validate the __str__ return of the Card
+        Validate the __str__ return of the Deck
         """
-        expected = '{} - {}'.format(self.card.front_text, self.card.back_text)
-        actual = self.card.__str__()
+        expected = self.deck.title
+        actual = self.deck.__str__()
         self.assertEqual(expected, actual)
