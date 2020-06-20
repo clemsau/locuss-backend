@@ -1,8 +1,12 @@
 import factory
-from django.contrib.contenttypes.models import ContentType
+
+from api.users.tests.factories import UserFactory
 
 
 class DeckFactory(factory.django.DjangoModelFactory):
+
+    def __init__(self, owner):
+        self.owner = owner
 
     class Meta:
         model = 'decks.Deck'
@@ -12,6 +16,3 @@ class DeckFactory(factory.django.DjangoModelFactory):
     description = factory.Faker('text', max_nb_chars=400)
     front_label = factory.Faker('text', max_nb_chars=50)
     back_label = factory.Faker('text', max_nb_chars=50)
-
-    owner = factory.LazyAttribute(lambda o: ContentType.objects.get_for_model(o.content_object))
-    contributors = factory.LazyAttribute(lambda o: ContentType.objects.get_for_model(o.content_object))
