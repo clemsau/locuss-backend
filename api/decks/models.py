@@ -13,22 +13,10 @@ class Deck(BaseModel):
     back_label = models.CharField(max_length=50)
 
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owner')
-    contributors = models.ManyToManyField(
-        User,
-        through='Contribution',
-        through_fields=('deck', 'user'),
-    )
+    contributors = models.ManyToManyField(User)
 
     class Meta:
         ordering = ['-created_at']
 
     def __str__(self):
         return self.title
-
-
-class Contribution(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return '{} - {}'.format(self.user.username, self.deck.title)
