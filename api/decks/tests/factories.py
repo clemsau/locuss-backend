@@ -5,9 +5,6 @@ from api.users.tests.factories import UserFactory
 
 class DeckFactory(factory.django.DjangoModelFactory):
 
-    def __init__(self, owner):
-        self.owner = owner
-
     class Meta:
         model = 'decks.Deck'
 
@@ -16,3 +13,5 @@ class DeckFactory(factory.django.DjangoModelFactory):
     description = factory.Faker('text', max_nb_chars=400)
     front_label = factory.Faker('text', max_nb_chars=50)
     back_label = factory.Faker('text', max_nb_chars=50)
+
+    owner = factory.SubFactory(UserFactory)
