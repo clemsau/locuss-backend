@@ -8,6 +8,8 @@ before_script:
   - docker-compose build
 script:
   - docker-compose run --rm web flake8 . && docker-compose run --rm web python manage.py test
+after_script:
+  - bash <(curl -s https://codecov.io/bash)
 notifications:
   email: false
 
