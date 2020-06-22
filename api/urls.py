@@ -10,10 +10,14 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
 from .users.views import UserViewSet, UserCreateViewSet
+from .decks.views import ListDeckView
+from .cards.views import ListCardView
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'users', UserCreateViewSet)
+router.register(r'decks', ListDeckView)
+router.register(r'cards', ListCardView)
 
 schema_view = get_schema_view(
    openapi.Info(
