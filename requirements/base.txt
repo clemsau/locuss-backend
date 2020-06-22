@@ -17,6 +17,7 @@ django_unique_upload==0.2.1
 djangorestframework==3.11.0
 Markdown==3.2.2
 django-filter==2.3.0
+drf_yasg==1.17.1
 
 # Testing
 mock==4.0.2
