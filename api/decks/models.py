@@ -13,7 +13,7 @@ class Deck(BaseModel):
     back_label = models.CharField(max_length=50)
 
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owner')
-    contributors = models.ManyToManyField(User)
+    contributors = models.ManyToManyField(User, blank=True)
 
     class Meta:
         ordering = ['-created_at']
