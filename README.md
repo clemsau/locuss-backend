@@ -8,11 +8,45 @@ Backend of the Locuss flashcard app. Check out the project's [documentation](htt
 
 Checkout the project's [roadmap](https://trello.com/b/s00qgb94/locuss-backend) 
 
-# Prerequisites
+## Table of content
+
+- [Project structure](#project-structure)
+- [Get started](#get-started)
+    - [Prerequisites](#prerequisites)
+    - [Local development](#local-development)
+- [Deployment](#deployment)   
+
+## Project structure
+
+```
+/api
+    /cards      # Card model application
+    /common     # Mixins
+    /config     # Django configuration
+    /decks      # Deck model application
+    /users      # User model application
+/docs
+/requirements
+.coveragerc
+.dockerignore
+.gitignore
+.travis.yml
+docer-compose.yml
+Docerfile
+manage.py
+mkdocs.yml
+README.md
+setup.cfg
+wait_for_postgres.py
+```
+
+## Get started
+
+### Prerequisites
 
 - [Docker](https://docs.docker.com/docker-for-mac/install/)  
 
-# Local Development
+### Local Development
 
 Start the dev server for local development:
 ```bash
@@ -29,3 +63,7 @@ Run a command inside the docker container:
 ```bash
 docker-compose run --rm web [command]
 ```
+
+## Deployment
+
+The application is deployed on [heroku](https://www.heroku.com/)
