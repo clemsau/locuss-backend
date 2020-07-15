@@ -6,7 +6,9 @@
 
 Backend of the Locuss flashcard app. Check out the project's [documentation](http://ClemSau.github.io/locuss-backend/).
 
-Checkout the project's [roadmap](https://trello.com/b/s00qgb94/locuss-backend) 
+Checkout the project's [roadmap](https://trello.com/b/s00qgb94/locuss-backend)
+
+The [locuss-frontend](https://github.com/ClemSau/locuss-frontend) repository is also open to contributions
 
 ## Table of content
 
