@@ -1,4 +1,7 @@
 import os
+
+import dj_database_url
+
 from .common import Common
 
 
@@ -9,6 +12,18 @@ class Production(Common):
     # https://docs.djangoproject.com/en/2.0/ref/settings/#allowed-hosts
     ALLOWED_HOSTS = ["*"]
     INSTALLED_APPS += ("gunicorn", )
+
+    # Postgres
+    DATABASES = {
+        'default': dj_database_url.config(
+            default='postgres://{}:{}@{}:{}/{}'.format(os.getenv('POSTGRES_USER', 'USER'),
+                                                       os.getenv('POSTGRES_PASSWORD', 'PASSWORD'),
+                                                       os.getenv('POSTGRES_HOST', 'HOST'),
+                                                       os.getenv('POSTGRES_PORT', 5432),
+                                                       os.getenv('POSTGRES_NAME', 'NAME'),),
+            conn_max_age=int(os.getenv('POSTGRES_CONN_MAX_AGE', 600))
+        )
+    }
 
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/2.0/howto/static-files/
