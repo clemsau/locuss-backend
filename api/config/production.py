@@ -46,4 +46,4 @@ class Production(Common):
         'Cache-Control': 'max-age=86400, s-maxage=86400, must-revalidate',
     }
 
-django_heroku.settings(locals(), logging=False, staticfiles=False)
+    django_heroku.settings(locals(), logging=False, staticfiles=False)
