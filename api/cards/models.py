@@ -13,8 +13,6 @@ class Card(BaseModel):
 
     deck = models.ForeignKey(Deck, on_delete=models.CASCADE)
 
-    last_update_author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='last_update_author')
-
     class Meta:
         ordering = ['-created_at']
 
