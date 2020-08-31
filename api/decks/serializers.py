@@ -4,6 +4,8 @@ from .models import Deck
 
 class DeckSerializer(serializers.ModelSerializer):
 
+    owner = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
     class Meta:
         model = Deck
         fields = ('created_at',

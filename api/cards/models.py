@@ -3,6 +3,7 @@ from django.db import models
 
 from api.common.models import BaseModel
 from api.decks.models import Deck
+from api.users.models import User
 
 
 class Card(BaseModel):
