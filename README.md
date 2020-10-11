@@ -51,7 +51,7 @@ wait_for_postgres.py
 ### Local Development
 
 Start the dev server for local development:
-```bash
+```
 docker-compose up
 ```
 
@@ -62,8 +62,13 @@ docker-compose run --rm web bash
 
 Run a command inside the docker container:
 
-```bash
+```
 docker-compose run --rm web [command]
+```
+
+Access the API's Redoc locally:
+```
+http://localhost:8000/redoc/
 ```
 
 ## Deployment
