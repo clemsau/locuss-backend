@@ -1,0 +1,16 @@
+setup:
+  addons:
+    - plan: 'heroku-postgresql:hobby-dev'
+      as: DATABASE
+build:
+  config:
+    DJANGO_SETTINGS_MODULE: 'api.config.production'
+    SECRET_KEY: 'not so secret, only used for builds!'
+  docker:
+    web: Dockerfile.web
+release:
+  image: web
+  command:
+    - python manage.py collectstatic --noinput && python manage.py migrate
+run:
+  web: gunicorn api.wsgi
