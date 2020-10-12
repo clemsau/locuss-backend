@@ -10,7 +10,7 @@ class Production(Common):
     SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
     # Site
     # https://docs.djangoproject.com/en/2.0/ref/settings/#allowed-hosts
-    ALLOWED_HOSTS = ["*"]
+    ALLOWED_HOSTS = ['localhost', 'locuss-backend.herokuapp.com', '.locuss.io', 'www.locuss.io']
     INSTALLED_APPS += ("gunicorn", )
 
     # Postgres
